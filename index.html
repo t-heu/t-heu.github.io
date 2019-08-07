@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3F51B5">
+  <meta name="author" content="@t_h_e_u">
+  <meta name="description" content="My mini blog">
+  <meta property="keywords" content="blog,page,theu,portfolio,project">
+  <meta property="og:image" content="https://avatars2.githubusercontent.com/u/25287877?s=400&u=885caa8004b54faef8625e004ffbcb5c8b577b32&v=4">
+  <title>LOGODESIGNLOVE</title>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <!--<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
+    });
+  </script>-->
+  
+  <main id="main">
+    <header class="header">
+      <h1>❤️LOGO<b class="logo-cl">DESIGN</b>LOVE</h1>
+      <div class="nav">
+        <a class="act">Home</a>
+        <a>About</a>
+        <a href="calculator.html">Calculator</a>
+        <a>Get the book</a>
+        <a>Contact</a>
+      </div>
+    </header>
+    
+    <section class="cont">
+      <form>
+        <input onkeyup="search(value)" type="text" placeholder="Search">
+      </form>
+      
+      <h2 id="nf" style="text-align: center">not found</h2>
+      
+      <section id="list">
+        <!--<div class="art">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQrpM3uhKcQtJN6o7jYNpiE0qJNyJzBrgfyCx2JeoKvDuLduJaz">
+          <h1>hhbb</h1>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
+          <time>10/10/10</time>
+        </div>-->
+      </section>
+    </section>
+    
+    <footer class="footer">
+      <div class="footer-c">
+        <p>&copy; theu 2018</p>
+        <p>
+          <a href="https://github.com/t-heu">Github</a>
+        </p>
+      </div>
+      
+      <p><a href="https://twitter.com/t_h_e_u?ref_src=twsrc%5Etfw" class="twitter-follow-button"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+    </footer>
+    
+    <article id="a" class="alert-cookie">
+      <p>We are using cookies to provide the best experience on our site. You accept?</p>
+      <button onclick="co()">I agree</button>
+    </article>
+  </main>
+  <script>
+    function co() {
+      localStorage.cok = document.getElementById("a").style.display = "none"
+    }
+    const xx = localStorage.cok
+    if(xx) {
+      document.getElementById("a").style.display = xx
+    }
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
