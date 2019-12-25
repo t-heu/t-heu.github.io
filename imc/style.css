@@ -32,7 +32,10 @@ body {
 .wrapper {
   margin: 1em;
   padding: 0;
-  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #imc {
@@ -68,15 +71,6 @@ body {
   margin: 0;
   font-weight: 500;
 }
-
-.btn:hover {
-  border-radius: 4px;
-  background-color: #fff;
-  background-image: linear-gradient(-180deg, rgba(255, 255, 255, .09) 0%, rgba(17, 17, 17, .04) 100%);
-  border: 1px solid rgba(22, 22, 22, .20);
-  color: #444;
-}
-
 .btn {
   font-weight: 500;
   font-size: 1em;
@@ -88,7 +82,13 @@ body {
   padding: .6em 1em;
   width: 100%;
 }
-
+.btn:hover {
+  border-radius: 4px;
+  background-color: #fff;
+  background-image: linear-gradient(-180deg, rgba(255, 255, 255, .09) 0%, rgba(17, 17, 17, .04) 100%);
+  border: 1px solid rgba(22, 22, 22, .20);
+  color: #444;
+}
 #visor {
   text-align: center;
   font-size: 2em;
