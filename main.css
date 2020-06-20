@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -24,10 +26,109 @@ a {
   color: #3F51B5
 }
 
-/**/
-.alert-cookie {
+.githubCorner {
+  color: #fff;
+  fill: #1abc9c;
   position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
 }
+
+@media (max-width:570px) {
+  .githubCorner {
+    height: 60px;
+    width: 60px
+  }
+}
+
+.githubCorner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out
+}
+
+@media (max-width:500px) {
+  .githubCorner:hover .octo-arm {
+    animation: none
+  }
+
+  .githubCorner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+  }
+}
+
+@-moz-keyframes octocat-wave {
+
+  0%,
+  100% {
+    transform: rotate(0)
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg)
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg)
+  }
+}
+
+@-webkit-keyframes octocat-wave {
+
+  0%,
+  100% {
+    transform: rotate(0)
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg)
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg)
+  }
+}
+
+@-o-keyframes octocat-wave {
+
+  0%,
+  100% {
+    transform: rotate(0)
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg)
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg)
+  }
+}
+
+@keyframes octocat-wave {
+
+  0%,
+  100% {
+    transform: rotate(0)
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg)
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg)
+  }
+}
+
+/**/
 
 .loader {
   margin: auto;
@@ -50,143 +151,55 @@ a {
 }
 
 /**/
-.header {
+.cc-about {
   position: relative;
-  /*margin-bottom: 4.8em;*/
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0 2.5rem;
-  width: 100%;
-  /*background: #3F51B5;*/
-  z-index: 10;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 7px;
-}
-
-.c-navigation__item {
-  position: relative;
-  display: inline-block;
-  padding: 1.8em 0;
-  font-family: arial, 'Roboto Mono', monospace;
-  font-weight: 700;
-  line-height: 1;
-  font-size: 14px;
-  color: #000;
-  text-transform: uppercase;
-}
-
-.c-navigation__item:not(:last-of-type) {
-  margin-right: 2.5rem
-}
-
-.c-navigation__item:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: transparent;
-  transition: background ease-in-out .2s;
-}
-
-.c-navigation__item:hover::after,
-.is-active:after {
-  background: #000;
-}
-.cc {
-  height: 100vh;
+.cc-about .app {
+  margin: 20px;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-.banner {
-  text-align: center;
-}
-.banner h1 {
-  font-family: 'Roboto Mono', monospace;
+.cc-about .app h3 {
+  margin-bottom: 5px;
   font-weight: 500;
-  line-height: 1.5;
-  font-size: 2em;
-  text-align: center;
-  color: #000;
+}
+.cc-about .app img {
+  border-radius: 50%;
+  width: 50%;
+}
+.cc-about .app button {
+  margin: 10px 0;
+  background: #222;
+  border-radius: 6px;
+  color: #fff;
+  padding: .5em 1em;
+  border: none;
+  width: 100px;
 }
 
-.banner h1:after {
-  margin-left: .5rem;
-  color: rgba(0, 0, 0, 0.5);
-  content: '¬';
-  font-weight: 800;
-}
-
-.banner span {
-  color: #999;
-  text-align: center;
-}
-.c-article__main {
-  max-width: 76rem;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 1rem 2.5rem 2rem 2.5rem;
-  line-height: 1.4;
-  font-size: 14px;
-}
-
-.about {
-  margin: auto;
-  padding: 0 3em;
-  width: 400px;
-}
-@media screen and (max-width: 400px) {
-  .about {
-    width: 100%;
-  }
-}
-
-.about img {
-  width: 6em;
-  height: 6em;
-  border-radius: 100%;
-}
-
-.about p {
-  font-size: 11px;
-  line-height: 15px;
-}
-.about .list {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.about .list ul {
-  padding: .5em 0;
-}
-.about .list ul li {
-  list-style: none;
-}
-.c-article__main>* {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.footer {
-  display: flex;
+.cc-about .img {
+  margin: 1em 0;
   justify-content: center;
-  padding: 0;
-  width: 100%;
-  background: #fff;
+  display: flex;
+}
+.cc-about .img img {
+  width: 150px;
+  border: solid 4px #fff;
+  border-radius: 50%;
 }
 
-.footer i {
-  color: #000;
-  font-size: 1.5em;
-  padding: .5em;
+.cc-about footer {
+  justify-content: center;
+  display: flex
 }
-
-.footer i:hover {
-  color: #4285F4;
+.cc-about footer a {
+  padding: 10px;
+}
+.cc-about footer a i {
+  color: #1abc9c;
+  font-size: 2em;
 }
