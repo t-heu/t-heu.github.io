@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@562&display=swap');
+
+:root {
+  --principle-color: #3F51B5;
+}
 
 * {
   margin: 0;
@@ -23,12 +28,12 @@ img {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: #3F51B5
+  color: var(--principle-color)
 }
 
 .githubCorner {
   color: #fff;
-  fill: #1abc9c;
+  fill: var(--principle-color);
   position: absolute;
   top: 0;
   border: 0;
@@ -57,7 +62,6 @@ a {
 }
 
 @-moz-keyframes octocat-wave {
-
   0%,
   100% {
     transform: rotate(0)
@@ -75,7 +79,6 @@ a {
 }
 
 @-webkit-keyframes octocat-wave {
-
   0%,
   100% {
     transform: rotate(0)
@@ -93,7 +96,6 @@ a {
 }
 
 @-o-keyframes octocat-wave {
-
   0%,
   100% {
     transform: rotate(0)
@@ -111,7 +113,6 @@ a {
 }
 
 @keyframes octocat-wave {
-
   0%,
   100% {
     transform: rotate(0)
@@ -129,7 +130,6 @@ a {
 }
 
 /**/
-
 .loader {
   margin: auto;
   border: 10px solid #f93;
@@ -150,46 +150,44 @@ a {
   }
 }
 
-/**/
 .cc-about {
   position: relative;
-}
-
-.cc-about .app {
-  margin: 20px;
-  width: 100px;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
 }
-.cc-about .app h3 {
-  margin-bottom: 5px;
-  font-weight: 500;
-}
-.cc-about .app img {
-  border-radius: 50%;
-  width: 50%;
-}
-.cc-about .app button {
-  margin: 10px 0;
-  background: #222;
-  border-radius: 6px;
-  color: #fff;
-  padding: .5em 1em;
-  border: none;
-  width: 100px;
-}
 
-.cc-about .img {
+.cc-about .profile {
   margin: 1em 0;
   justify-content: center;
   display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.cc-about .img img {
+.cc-about .profile img {
   width: 150px;
   border: solid 4px #fff;
   border-radius: 50%;
+}
+.cc-about .profile h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 5px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.cc-about .app {
+  margin: 20px 0;
+}
+.cc-about .app a {
+  display: inline-block;
+  text-align: center;
+  border: solid 1px #b2b2b2;
+  padding: 15px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 4px;
 }
 
 .cc-about footer {
@@ -200,6 +198,6 @@ a {
   padding: 10px;
 }
 .cc-about footer a i {
-  color: #1abc9c;
+  color: var(--principle-color);
   font-size: 2em;
 }
