@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@562&display=swap');
 
 :root {
+  font-size: 60%;
+  
   --principle-color: #3F51B5;
+  --seg-color: #66757f;
 }
 
 * {
@@ -166,18 +169,22 @@ a {
   flex-direction: column;
 }
 .cc-about .profile img {
-  width: 150px;
+  width: 200px;
   border: solid 4px #fff;
   border-radius: 50%;
 }
 .cc-about .profile h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 4rem;
+  color: #333;
   margin-bottom: 5px;
   font-family: 'Dancing Script', cursive;
 }
 
+/* #app */
 .cc-about .app {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   margin: 20px 0;
 }
 .cc-about .app a {
@@ -186,18 +193,31 @@ a {
   border: solid 1px #b2b2b2;
   padding: 15px;
   margin: 5px;
-  font-size: 16px;
+  font-size: 2rem;
   border-radius: 4px;
 }
 
+/* #footer */
 .cc-about footer {
   justify-content: center;
-  display: flex
+  flex-direction: column;
+  display: flex;
+  color: #66757f;
 }
-.cc-about footer a {
+
+.cc-about footer p {
+  font-size: 1.3rem;
+}
+
+.cc-about footer div {
+  text-align: center;
   padding: 10px;
 }
-.cc-about footer a i {
-  color: var(--principle-color);
-  font-size: 2em;
+
+.cc-about footer div a {
+  padding: 2px;
+}
+.cc-about footer div a i {
+  color: var(--seg-color);
+  font-size: 2rem;
 }
