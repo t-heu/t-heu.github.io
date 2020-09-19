@@ -132,8 +132,8 @@ a {
   }
 }
 
-/**/
-.loader {
+/* loading */
+.loading {
   margin: auto;
   border: 10px solid #f93;
   border-top: 10px solid #fff;
@@ -142,7 +142,6 @@ a {
   height: 60px;
   animation: spin 1.5s linear infinite;
 }
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -179,6 +178,7 @@ a {
   color: #333;
   margin-bottom: 5px;
   font-family: 'Dancing Script', cursive;
+  font-weight: 600;
 }
 
 /* #app */

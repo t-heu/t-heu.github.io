@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>aska</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="spinners.css" type="text/css">
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+</head>
+<body id="login_sucess">
+  <section id="preloader">
+    <span class="throbber-loader">Loading&#8230;</span>
+  </section>
+  
+  <section class="row">
+    <header class="navbar-one">
+      <div class="logo">
+        <h2>aska</h2>
+        <!--<small>certo</small>-->
+      </div>
+      
+      <div class="noti">
+        <i class="fas fa-user-friends">
+          <small>0</small></i>
+      </div>
+      <div class="noti">
+        <i class="fas fa-comment-alt">
+          <small>0</small></i>
+      </div>
+      <div class="noti">
+        <i class="fas fa-globe-americas">
+          <small>0</small></i>
+      </div>
+    </header>
+    
+    <header class="navbar-two">
+      <div class="menu-nav">
+        <i id="open-menu" class="fas fa-plus"></i>
+        <i id="close-menu" class="fas fa-minus"></i>
+      </div>
+      
+      <div class="nav_p">
+        <a href="#">News</a>
+        <a href="profile.html" class="profile-img">
+          <img src="./assets/img/pro.jpeg" alt="profile">
+        </a>
+      </div>
+      
+      <nav id="nav_a" class="nav">
+        <a href="#">News feed</a>
+        <a href="#">Messages</a>
+        <a onclick="logout()">Logout</a>
+      </nav>
+    </header>
+  </section>
+  
+  <main class="container">
+    <form method="get">
+      <textarea id="txt" name="txt" type="text" placeholder="Update Status..."></textarea>
+      <button onclick="crearMessageFeed()" type="button" class="btn">Enviar</button>
+    </form>
+      
+    <article id="userlist">
+    </article>
+        
+    <section class="cont">
+      <img src="./assets/img/pro.png">
+       
+      <div class="dt">
+        <a href="#"><h3 class="ti" id="user_para">bot404</h3></a><time>2s age</time>
+      </div>
+        
+      <p>Welcome</p>
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <a style="font-family: fb;">©aska</a>
+    <a href="#">Idioma</a>
+    <a href="#">Terms & Privacy</a>
+  </footer>
+  
+  <script>
+    var pre = document.getElementById("preloader");
+    setTimeout(function(){ pre.style.display = "none"; }, 2000);
+  </script>
+  <script src="js/jquery-2.1.0.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/API.js"></script>
+  <script>
+    window.onload = function() {
+      carregaFeed();
+    }
+  </script>
+</body>
+</html>
