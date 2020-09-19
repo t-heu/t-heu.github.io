@@ -60,7 +60,7 @@ body {
 }
 .sep input:focus {
   /*box-shadow:  0 0 1px 3px #CB3837;*/
-  border: #222 dashed 1px;
+  border: green dashed 1px;
   border-radius: 4px;
 }
 .sep p:nth-child(1) {
@@ -99,7 +99,7 @@ body {
   border-radius: 30px;
   position: absolute;
   z-index: 20;
-  transform: translate(33px,-1px);
+  transform: translate(49px,1px);
 }
 
 #visor::-webkit-input-placeholder {
@@ -117,6 +117,7 @@ body {
 
 .alertIMC p {
   padding: 0;
+  width: 100px;
   font-size: 0.9em;
   font-weight: 500;
 }

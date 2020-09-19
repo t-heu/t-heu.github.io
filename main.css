@@ -181,6 +181,19 @@ a {
   font-weight: 600;
 }
 
+.cc-about .about {
+  width: 300px;
+}
+
+.cc-about .about p {
+  text-align: center;
+  /*text-indent: 10px;*/
+  line-height: 20px;
+  color: var(--seg-color);
+  font-size: 1.3rem;
+  font-family: 300;
+}
+
 /* #app */
 .cc-about .app {
   display: grid;

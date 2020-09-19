@@ -10,8 +10,6 @@
   firebase.initializeApp(config);
 }());
 
-const ErroLoginSignup = document.getElementById("erro");
-const txt = document.getElementById("txt");
 const login_sucess = document.getElementById("login_sucess");
 const not_login = document.getElementById("not_login");
 const userlist = document.getElementById("userlist");
@@ -24,35 +22,48 @@ function setLoading() {
   userlist.appendChild(h2);
 }
 
+function AppError(mes) {
+  const ErroLoginSignup = document.getElementById("erro");
+  ErroLoginSignup.style.display = "block";
+  ErroLoginSignup.innerText = "Error: " + mes
+  setTimeout(() => {
+    ErroLoginSignup.style.display = "none"
+  },3000);
+}
+
 // verificar se tá logado
 firebase.auth().onAuthStateChanged(firebaseUser => {
-  
   if(firebaseUser) {
     // User is signed in.
     if(not_login)
-    window.location.replace("dash.html");
+      window.location.replace("dash.html");
     
     const name = firebase.auth().currentUser;
     
-    console.log(firebaseUser.email)
+    // console.log(firebaseUser.email)
     
-    //document.getElementById("user_para").innerText = firebaseUser.email;
+    document.getElementById("user_para").innerText = firebaseUser.email;
   } else {
     // No user is signed in.
-    //if(login_sucess) window.location.replace("index.html");
+    if(login_sucess) window.location.replace("index.html");
   }
 });
 
 function crearMessageFeed() {
-  if (txt.value != "" && txt.value.length > 5) {
+  const txt = document.getElementById("txt");
+  try {
+    if (txt.value === "") throw "Campo vazio.";
+    if (txt.value.length >= 5) throw "Precisa conter 5 caracteres.";
     
     var data = {
       coment: txt.value
     }
     
-    return firebase.database().ref().child("feed").push(data);
+    firebase.database().ref().child("feed").push(data);
+    return txt.value = ''
+  } catch (err) {
+    AppError(err)
   }
-  txt.value = null
 }
 
 // exibição
@@ -95,15 +106,14 @@ function carregaFeed() {
   });
 }
   
-  //Get elements
-  const userEmail = document.getElementById("email_field");
-  const userPass = document.getElementById("password_field");
-  const btnLogin = document.getElementById("login");
-  const btnSignup = document.getElementById("signup");
+//Get elements
+const userEmail = document.getElementById("email_field");
+const userPass = document.getElementById("password_field");
+const btnLogin = document.getElementById("login");
+const btnSignup = document.getElementById("signup");
 
-  //Add Login event
-  const lo_si = function() {
-    
+//Add Login event
+const lo_si = function() {
   btnLogin.addEventListener('click', e => {
     //Get email and pass
     const email = userEmail.value;
@@ -113,7 +123,7 @@ function carregaFeed() {
     //Sign in
     firebase.auth().signInWithEmailAndPassword(email, pass)
     .catch(function(error) {
-      erro(error.message)
+      AppError(error.message)
     });
   });
   
@@ -132,18 +142,9 @@ function carregaFeed() {
       
       firebase.auth().createUserWithEmailAndPassword(email, pass)
     } catch(err) {
-      erro(err)
+      AppError(err)
     }
-    
   });
-  }
-
-function erro(mes) {
-  ErroLoginSignup.style.display = "block";
-  ErroLoginSignup.innerText = "Error: " + mes
-  setTimeout(() => {
-    ErroLoginSignup.style.display = "none"
-  },3000);
 }
 
 function logout() {

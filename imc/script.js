@@ -1,28 +1,32 @@
 const form = document.getElementById("imc");
-const Result = document.getElementById('visor');
-const kg = document.getElementById('campo1');
-const m = document.getElementById('campo2');
+const result = document.getElementById('visor');
+const kg_input = document.getElementById('campo1');
+const height_input = document.getElementById('campo2');
 const alertimc = document.getElementById("alert-imc");
 const y = document.querySelector('.progress-ring__circle');
 let imc;
 
 function weightImc() {
-  v = kg.value;
+  v = kg_input.value;
   v = v.replace(/\D/g,"")
   //v = v.replace(/[0-9]{12}/,"inválido"); //limita pra máximo 999.999.999,99
   //v = v.replace(/(\d{1})(\d{8})$/,"$1.$2"); //coloca ponto antes dos últimos 8 digitos
   v = v.replace(/(\d{1})(\d{1,1})$/,"$1.$2"); //coloca virgula antes dos últimos 2 digitos
-  kg.value = v;
+  console.log(v)
+  if(Number(v) > 300) {
+    return
+  }
+  kg_input.value = v;
 }
 
 function heightImc() {
-  v = m.value;
+  v = height_input.value;
   v = v.replace(/\D/g,""); //permite digitar apenas números
   v = v.replace(/(\d{1})(\d{1,2})$/,"$1.$2"); //coloca virgula antes dos últimos 2 digitos
-  if(v >= 20.00) {
+  if(Number(v) >= 10) {
     return
   }
-  m.value = v;
+  height_input.value = v;
 }
 
 function sendImc(text, color) {
@@ -32,16 +36,17 @@ function sendImc(text, color) {
 }
   
 form.addEventListener('submit', function(e) {
+  e.preventDefault();
   imc = kg.value / (Math.pow(m.value, 2));
-  Result.value = Number(imc.toFixed(2));
-    
-  const circle = document.querySelector('circle');
-  const radiu = circle.r.baseVal.value;
-  const circumference = radiu * 2 * Math.PI;
-    
-  circle.style.strokeDasharray = `${circumference}`
+  result.value = Number(imc.toFixed(2));
     
   function setProgress(percent) {
+    const circle = document.querySelector('circle');
+    const radiu = circle.r.baseVal.value;
+    const circumference = radiu * 2 * Math.PI;
+    
+    circle.style.strokeDasharray = `${circumference}`
+  
     const offset = circumference - percent / 100 * circumference;
     circle.style.strokeDashoffset = offset;
   }
@@ -69,6 +74,4 @@ form.addEventListener('submit', function(e) {
     sendImc("Obesidade mórbida, grau III", "#CB3837")
     setProgress(imc);
   }
-  
-  e.preventDefault();
 });
