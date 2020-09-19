@@ -7,6 +7,7 @@
   outline: 0;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -50,6 +51,7 @@ select:-webkit-autofill:focus {
   background: linear-gradient(#385898,#305088);
   width: 100%;
   display: flex;
+  height: 60px;
   justify-content: space-around;
   position: relative;
   align-items: center;
@@ -58,6 +60,12 @@ select:-webkit-autofill:focus {
 }
 .navbar-one .logo {
   padding: 1.3em 0 1.3em .4em;
+}
+.navbar-one .notis {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
 }
 .navbar-one h2 {
   display: inline-block;
@@ -79,29 +87,38 @@ select:-webkit-autofill:focus {
   position: absolute;
   color: #fff;
   font-size: 10px;
-  transform: translate(-5px, 10px);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  transform: translate(11px, -7px);
   background: red;
   border-radius: 4px;
-  padding: .2em;
+  padding-bottom: 2px;
+  height: 15px;
+  width: 11px;
 }
 #close-menu {
   display: none;
 }
 .navbar-two {
   width: 60%;
+  position: relative;
   height: 66px;
+  align-items: center;
+  display: flex;
   background: linear-gradient(#F0F0F0, #E8f0f0);
   box-shadow: #182840 2px 0 4px 1px;
 }
 .navbar-two .nav_p {
   display: flex;
   align-items: center;
+  width: 100%;
+  height: 60px;
   justify-content: space-around;
 }
 .navbar-two .nav_p a {
   color: #404850;
-  margin: 0;
-  padding: 1em 0;
 }
 .navbar-two .nav_p a img {
   width: 40px;
@@ -123,7 +140,7 @@ select:-webkit-autofill:focus {
   border-style: solid;
   border-color: #181820 transparent; /*#1c1c24*/
   border-width: 0 50px 30px 0;
-  transform: translateY(37px);
+  bottom: 0;
 }
 .menu-nav .fa-plus, .menu-nav .fa-minus {
   position: relative;
@@ -132,10 +149,8 @@ select:-webkit-autofill:focus {
 }
 .navbar-two .nav {
   background: #181820;/*#1C1c24;*/
-  position: relative;
   z-index: 4;
   width: 100%;/*13em;*/
-  transform: translateY(3px);
   overflow: hidden;
   display: none;
 }
@@ -170,6 +185,7 @@ select:-webkit-autofill:focus {
   display: flex;
   transform: translateY(-6px);
   position: relative;
+  width: 100%;
   z-index: -100;
   background: #1D1E23;
   color: #888;
@@ -177,7 +193,7 @@ select:-webkit-autofill:focus {
 }
 .nav_2 .photo,
 .nav_2 .info {
-  width: 50%;
+  margin-right: 2em;
 }
 .nav_2 h2 {
   margin-top: 0;
@@ -188,7 +204,11 @@ select:-webkit-autofill:focus {
 }
 /**/
 .container {
-  margin: 2em 1em 1em 1em;
+  margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   font-family: monospace;
 }
 .container textarea {
@@ -212,6 +232,7 @@ select:-webkit-autofill:focus {
   background: #1D1E23;/*25a*/
   padding: .7em 1em;
   border-radius: 5px;
+  cursor: pointer;
   box-shadow: #111 3px 3px 0 3px;
   z-index: 2;
   font-weight: 500;
@@ -225,8 +246,16 @@ select:-webkit-autofill:focus {
 }
 #userlist {
   display: flex;
+  justify-content: center;
+  width: 500px;
   flex-direction: column-reverse;
 }
+@media (max-width: 540px) {
+  #userlist {
+    width: 80%;
+  }
+}
+
 #userlist h2 {
   margin: 1em 0;
   text-align: center;
@@ -276,6 +305,7 @@ select:-webkit-autofill:focus {
 /**/
 .footer {
   padding: 1em;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -308,9 +338,15 @@ select:-webkit-autofill:focus {
 }
 
 .main-div {
-  width: 70%;
+  width: 400px;
   margin: 0 auto;
   padding: 20px;
+}
+
+@media (max-width: 400px) {
+  .main-div {
+    width: 80%;
+  }
 }
 
 .main-div .login-form input {

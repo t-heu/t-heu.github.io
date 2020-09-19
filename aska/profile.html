@@ -18,41 +18,47 @@
     <header class="navbar-one">
       <div class="logo">
         <h2>aska</h2>
-        <!--<small>certo</small>-->
       </div>
       
-      <div class="noti">
-        <i class="fas fa-user-friends">
-          <small>0</small></i>
-      </div>
-      <div class="noti">
-        <i class="fas fa-comment-alt">
-          <small>0</small></i>
-      </div>
-      <div class="noti">
-        <i class="fas fa-globe-americas">
-          <small>0</small></i>
+      <div class="notis">
+        <div class="noti">
+          <i class="fas fa-user-friends">
+            <small>0</small></i>
+        </div>
+        <div class="noti">
+          <i class="fas fa-comment-alt">
+            <small>0</small></i>
+        </div>
+        <div class="noti">
+          <i class="fas fa-globe-americas">
+            <small>0</small></i>
+        </div>
       </div>
     </header>
     
     <header class="navbar-two">
-      <div class="menu-nav">
-        <i id="open-menu" class="fas fa-plus"></i>
-        <i id="close-menu" class="fas fa-minus"></i>
+      <div style="width: 100%;">
+        <div class="menu-nav">
+          <i id="open-menu" class="fas fa-plus"></i>
+          <i id="close-menu" class="fas fa-minus"></i>
+        </div>
+        
+        <div class="nav_p">
+          <a href="#">News</a>
+          <a href="profile.html" class="profile-img">
+            <img src="./assets/img/6bc.png" alt="profile">
+          </a>
+        </div>
       </div>
       
-      <div class="nav_p">
-        <a href="#">News</a>
-        <a href="profile.html" class="profile-img">
-          <img src="./assets/img/6bc.png" alt="profile">
-        </a>
+      <div style="position: absolute; top: 0;">
+        <div style="height: 66px;"></div>
+        <nav id="nav_a" class="nav">
+          <a href="#">News feed</a>
+          <a href="#">Messages</a>
+          <a onclick="logout()">Logout</a>
+        </nav>
       </div>
-      
-      <nav id="nav_a" class="nav">
-        <a href="#">Messages</a>
-        <a href="dash.html">Dash</a>
-        <a onclick="logout()">Logout</a>
-      </nav>
     </header>
   </section>
   
