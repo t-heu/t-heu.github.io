@@ -36,7 +36,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   if(firebaseUser) {
     // User is signed in.
     if(not_login)
-      window.location.replace("dash.html");
+      window.location.replace("feed.html");
     
     const name = firebase.auth().currentUser;
     

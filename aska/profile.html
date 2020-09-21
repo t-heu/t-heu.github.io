@@ -20,7 +20,7 @@
         <h2>aska</h2>
       </div>
       
-      <div class="notis">
+      <div class="notifications">
         <div class="noti">
           <i class="fas fa-user-friends">
             <small>0</small></i>
@@ -37,7 +37,12 @@
     </header>
     
     <header class="navbar-two">
-      <div style="width: 100%;">
+      <div style="width: 100%;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      height: 66px;
+      z-index: 12;">
         <div class="menu-nav">
           <i id="open-menu" class="fas fa-plus"></i>
           <i id="close-menu" class="fas fa-minus"></i>
@@ -51,7 +56,7 @@
         </div>
       </div>
       
-      <div style="position: absolute; top: 0;">
+      <div style="position: absolute; top: 0; width: 100%;">
         <div style="height: 66px;"></div>
         <nav id="nav_a" class="nav">
           <a href="#">News feed</a>
@@ -62,9 +67,11 @@
     </header>
   </section>
   
-  <nav class="nav_2">
+  <nav class="profile">
     <div class="photo">
-      <a href="index.html" class="profile-img"><img src="./assets/img/6bc.png" alt="profile"></a>
+      <a href="index.html" class="profile-img">
+        <img src="./assets/img/6bc.png" alt="profile">
+      </a>
     </div>
     <div class="info">
       <h2 id="user_para">name</h2>

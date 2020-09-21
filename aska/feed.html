@@ -11,6 +11,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 </head>
 <body id="login_sucess">
+  <p id="erro"></p>
   <section id="preloader">
     <span class="throbber-loader">Loading&#8230;</span>
   </section>
@@ -21,7 +22,7 @@
         <h2>aska</h2>
       </div>
       
-      <div class="notis">
+      <div class="notifications">
         <div class="noti">
           <i class="fas fa-user-friends">
             <small>0</small></i>
@@ -38,7 +39,12 @@
     </header>
     
     <header class="navbar-two">
-      <div style="width: 100%;">
+      <div style="width: 100%;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      height: 66px;
+      z-index: 12;">
         <div class="menu-nav">
           <i id="open-menu" class="fas fa-plus"></i>
           <i id="close-menu" class="fas fa-minus"></i>
@@ -52,7 +58,7 @@
         </div>
       </div>
       
-      <div style="position: absolute; top: 0;">
+      <div style="position: absolute; top: 0; width: 100%;">
         <div style="height: 66px;"></div>
         <nav id="nav_a" class="nav">
           <a href="#">News feed</a>
@@ -63,11 +69,10 @@
     </header>
   </section>
   
-  <main class="container">
-    <p id="erro"></p>
-    <form method="get">
-      <textarea id="txt" name="txt" type="text" placeholder="Update Status..."></textarea>
-      <button onclick="crearMessageFeed()" type="button" class="btn">Enviar</button>
+  <main class="feed">
+    <form class="form-create-message" method="get">
+      <textarea id="txt" name="txt" type="text" placeholder="Any ideas for today?"></textarea>
+      <button onclick="crearMessageFeed()" type="button" class="btn">SEND</button>
     </form>
       
     <article id="userlist">
@@ -75,7 +80,10 @@
         <img src="./assets/img/pro.png">
          
         <div class="dt">
-          <a href="#"><h3 class="ti" id="user_para">bot404</h3></a><time>2s age</time>
+          <a href="#">
+            <h3 class="ti" id="user_para">bot404</h3>
+          </a>
+          <time>2s age</time>
         </div>
           
         <p>Welcome</p>
