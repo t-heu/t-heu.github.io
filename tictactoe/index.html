@@ -22,9 +22,9 @@
         <button type="button" id="play" onclick=" tic_tac_toe.start()">PLAY</button>
         
         <select id="change" onchange="update()">
-          <option value="1">joga contra máquina</option>
+          <option value="1">contra máquina</option>
           <option value="2" selected>contra um amigo ao lado</option>
-          <option value="3">joga online</option>
+          <option value="3">online</option>
         </select>
       </div>
   </article>
@@ -46,11 +46,11 @@
   <script>
     function update() {
       if (document.getElementById('change').value == 1) {
-        tic_tac_toe.turn = 1;
+        tic_tac_toe.select = 1;
       } else if(document.getElementById('change').value == 3) {
-        tic_tac_toe.turn = 3
+        tic_tac_toe.select = 3
       } else {
-        tic_tac_toe.turn = 2;
+        tic_tac_toe.select = 2;
       }
     }
     
