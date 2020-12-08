@@ -3,7 +3,6 @@
 
 :root {
   font-size: 60%;
-  
   --principle-color: #3F51B5;
   --seg-color: #66757f;
 }
@@ -132,7 +131,6 @@ a {
   }
 }
 
-/* loading */
 .loading {
   margin: auto;
   border: 10px solid #f93;
@@ -142,6 +140,7 @@ a {
   height: 60px;
   animation: spin 1.5s linear infinite;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -152,7 +151,7 @@ a {
   }
 }
 
-.cc-about {
+.about {
   position: relative;
   justify-content: center;
   align-items: center;
@@ -160,19 +159,19 @@ a {
   flex-direction: column;
 }
 
-.cc-about .profile {
+.about .about__profile {
   margin: 1em 0;
   justify-content: center;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.cc-about .profile img {
+.about .about__profile img {
   width: 200px;
   border: solid 4px #fff;
   border-radius: 50%;
 }
-.cc-about .profile h1 {
+.about .about__profile .about__title {
   text-align: center;
   font-size: 4rem;
   color: #333;
@@ -181,56 +180,70 @@ a {
   font-weight: 600;
 }
 
-.cc-about .about {
+.about .about__subtitle {
+  margin-top: 1em;
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 5px;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+}
+
+.about .about__description {
   width: 300px;
 }
 
-.cc-about .about p {
+.about .about__description p {
   text-align: center;
-  /*text-indent: 10px;*/
   line-height: 20px;
   color: var(--seg-color);
   font-size: 1.3rem;
   font-family: 300;
 }
 
-/* #app */
-.cc-about .app {
+.about .about__item {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
   margin: 20px 0;
-}
-.cc-about .app a {
-  display: inline-block;
-  text-align: center;
   border: solid 1px #b2b2b2;
-  padding: 15px;
-  margin: 5px;
-  font-size: 2rem;
-  border-radius: 4px;
+  border-radius:4px;
 }
 
-/* #footer */
-.cc-about footer {
+.about .about__item .about__title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 4px;
+  color: #eee;
+  font-size: 1.5rem;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5)
+}
+
+.about .footer {
   justify-content: center;
   flex-direction: column;
   display: flex;
   color: #66757f;
 }
 
-.cc-about footer p {
+.about .footer p {
   font-size: 1.3rem;
 }
 
-.cc-about footer div {
+.about .footer div {
   text-align: center;
   padding: 10px;
 }
 
-.cc-about footer div a {
+.about .footer div a {
   padding: 2px;
 }
-.cc-about footer div a i {
+.about .footer div a i {
   color: var(--seg-color);
   font-size: 2rem;
 }
