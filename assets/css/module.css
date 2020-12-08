@@ -1,38 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@562&display=swap');
-
-:root {
-  font-size: 60%;
-  --principle-color: #3F51B5;
-  --seg-color: #66757f;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-}
-
-hr {
-  border: none;
-}
-
-img {
-  width: 100%;
-}
-
-a {
-  background-color: transparent;
-  text-decoration: none;
-  color: var(--principle-color)
-}
-
 .githubCorner {
   color: #fff;
   fill: var(--principle-color);
@@ -159,41 +124,33 @@ a {
   flex-direction: column;
 }
 
-.about .about__profile {
-  margin: 1em 0;
+.about__profile {
   justify-content: center;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.about .about__profile img {
+
+.about__profile img {
   width: 200px;
   border: solid 4px #fff;
   border-radius: 50%;
 }
-.about .about__profile .about__title {
-  text-align: center;
-  font-size: 4rem;
+
+.about__title {
   color: #333;
+  margin-top: .4em;
   margin-bottom: 5px;
   font-family: 'Dancing Script', cursive;
   font-weight: 600;
 }
 
-.about .about__subtitle {
-  margin-top: 1em;
-  font-size: 3rem;
-  color: #333;
-  margin-bottom: 5px;
-  font-family: 'Dancing Script', cursive;
-  font-weight: 600;
-}
-
-.about .about__description {
+.about__description {
   width: 300px;
+  margin-bottom: 1em;
 }
 
-.about .about__description p {
+.about__description p {
   text-align: center;
   line-height: 20px;
   color: var(--seg-color);
@@ -201,7 +158,7 @@ a {
   font-family: 300;
 }
 
-.about .about__item {
+.about__item {
   position: relative;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -213,7 +170,7 @@ a {
   border-radius:4px;
 }
 
-.about .about__item .about__title {
+.about__item .about__title {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -224,26 +181,27 @@ a {
   background-color: rgba(0, 0, 0, .5)
 }
 
-.about .footer {
+.footer {
   justify-content: center;
   flex-direction: column;
   display: flex;
   color: #66757f;
 }
 
-.about .footer p {
+.footer p {
   font-size: 1.3rem;
 }
 
-.about .footer div {
+.footer div {
   text-align: center;
   padding: 10px;
 }
 
-.about .footer div a {
+.footer div a {
   padding: 2px;
 }
-.about .footer div a i {
+
+.footer div a i {
   color: var(--seg-color);
   font-size: 2rem;
 }

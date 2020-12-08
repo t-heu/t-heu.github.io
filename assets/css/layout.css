@@ -1,0 +1,15 @@
+.font-size-sm {
+  font-size: 2rem;
+}
+
+.font-size-md {
+  font-size: 3rem;
+}
+
+.font-size-xd {
+  font-size: 4rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
