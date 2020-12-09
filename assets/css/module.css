@@ -148,9 +148,6 @@
 .about__description {
   width: 300px;
   margin-bottom: 1em;
-}
-
-.about__description p {
   text-align: center;
   line-height: 20px;
   color: var(--seg-color);
@@ -176,7 +173,6 @@
   text-align: center;
   padding: 4px;
   color: #eee;
-  font-size: 1.5rem;
   bottom: 0;
   background-color: rgba(0, 0, 0, .5)
 }
