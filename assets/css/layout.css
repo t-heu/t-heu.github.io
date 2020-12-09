@@ -1,12 +1,16 @@
 .font-sm {
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
 .font-md {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .font-lg {
+  font-size: 3rem;
+}
+
+.font-xl {
   font-size: 4rem;
 }
 
