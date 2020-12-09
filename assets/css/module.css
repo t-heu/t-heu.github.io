@@ -7,10 +7,6 @@
   right: 0;
 }
 
-.githubCorner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out
-}
-
 /* .loading {
   margin: auto;
   border: 10px solid #f93;
@@ -36,7 +32,7 @@
   flex-direction: column;
 }
 
-.about__profile img {
+.about__image {
   width: 200px;
   border: solid 4px #fff;
   border-radius: 50%;
@@ -89,11 +85,11 @@
   color: #66757f;
 }
 
-.footer div {
+.footer__icons {
   text-align: center;
   padding: 10px;
 }
 
-.footer div a {
+.footer__link {
   padding: 2px;
 }
