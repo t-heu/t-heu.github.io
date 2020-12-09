@@ -1,12 +1,12 @@
+.githubCorner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out
+}
+
 @media (max-width:570px) {
   .githubCorner {
     height: 60px;
     width: 60px
   }
-}
-
-.githubCorner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out
 }
 
 @media (max-width:500px) {
