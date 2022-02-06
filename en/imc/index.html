@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html pt-br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3F51B5">
+  <meta name="author" content="@t_h_e_u">
+  <meta name="description" content="Calcule seu IMC e veja sua faixa de peso ideal">
+  <meta property="keywords" content="calculate,blog,imc,theu">
+  <meta property="og:title" content="IMC">
+  <meta property="og:description" content="Calculate your IMC">
+  <title>IMC</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/t-heu/t-heu.github.io/master/fav.png" sizes="32x32">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h2>IMC</h2>
+  </header>
+   
+  <main class="wrapper">
+    <form name="imc" id="imc">
+      <section class="alertIMC">
+        <p id="alert-imc" data-value="valor">Situação:&nbsp;</p>
+        
+        <svg class="progress-ring" width="160" height="160">
+          <circle class="progress-ring__circle" 
+          stroke="#CB3837" stroke-width="10" fill="transparent" r="62" cx="60" cy="0"/>
+        </svg>
+          
+        <input id="visor" type="number" placeholder="00,0" readonly>
+      </section>
+        
+      <div class="sep">
+        <p>
+          <label for="campo1">Peso - (kg)</label>
+          <input id="campo1" type="text" placeholder="00,0" minlength="2" maxlength="6" onkeyup="weightImc();" required></p>
+          
+        <p>
+          <label for="campo2">Altura - (m)</label>
+          <input id="campo2" type="text" placeholder="0,00" minlength="2" maxlength="6" onkeyup="heightImc();" required></p>
+      </div>
+        
+      <button class="btn" type="submit">Enviar</button>
+    </form>
+    <p class="footer">Developed by <a href="https://t-heu.github.io">@theu</a></p>
+  </main>
+<script src="script.js"></script>
+</body>
+</html>
