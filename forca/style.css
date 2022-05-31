@@ -35,12 +35,18 @@ span {
   color: white;
 }
 
+section {
+  margin: 1em;
+}
+
 #state, #erros {
   color: #e2584d;
 }
 
-section {
-  margin: 1em;
+#marking_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #game {
@@ -152,9 +158,10 @@ button {
   border-radius: 5px;
   box-shadow: 0 9px 0 green ,0 9px 25px rgba(0,0,0,.7);
   margin: 1em auto;
-  min-width: 45px;
+  min-width: 130px;
   max-width: inherit;
   text-align: center;
+  cursor: pointer;
   -webkit-transition: all .1s ease;
   -moz-transition: all .1s ease;
   -ms-transition: all .1s ease;
@@ -162,7 +169,7 @@ button {
   transition: all .1s ease;
 }
 
-button:active {
+button:active, button:hover {
   box-shadow: green 1px 1px 0 1px;
 }
 
@@ -171,7 +178,9 @@ button:active {
   font-family: monospace;
   font-weight: bold;
   margin: 1em;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .table p {
@@ -180,15 +189,17 @@ button:active {
 
 .letras {
   margin: 1em;
-  display: flex;
+  display: grid;
   justify-content: center;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(6, 0fr);
+  grid-gap: 0px;
 }
 
 .letras input {
   box-shadow: #000 1px 1px 0 2px;
   transition: none;
   display: inline;
+  cursor: pointer;
 }
 
 .letras input:active {

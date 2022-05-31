@@ -1,0 +1,68 @@
+{
+  "themes": {
+    "fruits": [
+      {
+        "name": "KIWI",
+        "dica": "bbbbb"
+      },
+      {
+        "name": "AÇAÍ",
+        "dica": "aaaaa"
+      }
+    ],
+    "aa": [
+      "BANANA",
+      "LARANJA",
+      "GOIABA",
+      "UVA",
+      "ABACATE",
+      "GUARANÁ",
+      "ABACAXI",
+      "MORANGO",
+      "MELANCIA",
+      "CEREJA",
+      "FRAMBOESA",
+      "LIMA",
+      "TANGERINA",
+      "COCO",
+      "AMEIXA",
+      "ACEROLA",
+      "AMORA",
+      "AZEITONA",
+      "CACAU",
+      "GRAVIOLA",
+      "JACA",
+      "MANGA",
+      "MURICI",
+      "PINHA",
+      "PITANGA",
+      "PISTACHE",
+      "QUINA",
+      "SERIGUELA",
+      "TOMATE",
+      "TORANJA",
+      "UMBU",
+      "DAMASCO",
+      "FIGO",
+      "POMELO",
+      "CAJU",
+      "CIRIGUELA",
+      "CRANBERRY"
+    ],
+    "food": [
+      {
+        "name": "QUEIJO",
+        "dica": ""
+      },
+      "CARNE","OVO","BACON","PIZZA","LASANHA","ESTROGONOFE","SARDINHA","COXINHA","PASTEL","EMPADA","FRANGO","FEIJOADA","CUSCUZ","CHOCOLATE","ARROZ","PANQUECA","SORVETE","LEITE","PRESUNTO","QUIBE"
+    ],
+    "animals": [
+      {
+        "name": "GALINHA",
+        "dica": ""
+      },
+      "GATO","PACA","ELEFANTE","PORCO","RATO","BEIJA-FLOR","URSO","GOLFINHO","CABRA","ZEBRA","GIRAFA","CAVALO","CORUJA","PELICANO","PANTERA","PINGUIM","RINOCERONTE","OVELHA","ESQUILO","CAMELO","LHAMA","PEIXE","MACACO","GORILA","MORCEGO","TATU","TARTARUGA","JABUTI","AVESTRUZ","COELHO","TIGRE","TUCANO","CANGURU","SAPO","URUBU","BALEIA","ALCE"
+    ],
+    "random": ["PREFEITO","MURAL","PACIFICA","ARMAS","INÍCIO","GUARDA-CHUVA","TERMOSTATO","GUARDA-ROUPA","JARRO","BINGO","ESTRELA CADENTE","REGRAS","TRANSPORTE","RODA-GIGANTE","AMANHECER","EMPRESA","EMPREGO","TRABALHO","VIDA","RÁDIO","MINHA","ANO-LUZ","COUVE-FLOR","SINAL","ASTRONOMIA","ASTRONAUTA","ANCHOVA","MONTANHA-RUSSA"]
+  }
+}

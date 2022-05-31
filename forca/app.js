@@ -9,7 +9,7 @@ const marking_div = document.getElementById("marking_div");
 const inputs = document.getElementsByClassName('required');
 
 const forca = {
-  words: new Array(),
+  words: [],
   word: "",
   error: 0,
   
@@ -19,7 +19,7 @@ const forca = {
     
     let num = this.words.length - 1;
     let i = Math.round(Math.random() * num);
-    
+
     this.word = this.words[i];
     this.camp();
   },
@@ -27,19 +27,19 @@ const forca = {
   camp: function() {
     let content = "";
     
-    for (let i = 0; i < this.word.length; i++) {
-      
+    for (let i = 0; i < this.word.name.length; i++) {
       content += '<input class="required" type="text" minlength="1" maxlength="1" readonly id="letter'+ i +'">';
-      
       game.innerHTML = content;
     }
+
+    statement_of_income.innerText = this.word.dica;
   },
   
   checkout: function(valor) {
     let letra = valor;
     letra = letra.toUpperCase();
     
-    if (letra !== "" && this.word.indexOf(letra) !== -1) {
+    if (letra !== "" && this.word.name.indexOf(letra) !== -1) {
       
       for(let i = 0; i < inputs.length; i++) {
         if (letra == inputs[i].value) {
@@ -48,10 +48,10 @@ const forca = {
         }
       }
         
-      for (let i = 0; i <= this.word.length; i++) {
-        let letter = this.word.indexOf(letra, i);
-        let caractereHifen = this.word.indexOf("-" ,i);
-        let caractereSpace = this.word.indexOf(" " ,i);
+      for (let i = 0; i <= this.word.name.length; i++) {
+        let letter = this.word.name.indexOf(letra, i);
+        let caractereHifen = this.word.name.indexOf("-" ,i);
+        let caractereSpace = this.word.name.indexOf(" " ,i);
           
         if (caractereHifen >= 0) {
           document.getElementById('letter'+ caractereHifen).value = "-";
@@ -73,7 +73,7 @@ const forca = {
   lost: function() {
     if (this.error == 5) {
       this.error += 1;
-      statement_of_income.innerHTML = "GAME OVER! " + '<span> Palavra: '+ this.word +'</span>';
+      statement_of_income.innerHTML = "GAME OVER! " + '<span> Palavra: '+ this.word.name +'</span>';
       this.restart();
     } else {
       this.error += 1;
@@ -97,31 +97,32 @@ const forca = {
   
   restart: function() {
     letters_div.style.display = "none";
-    btnReset.style.display = "inline-block";
+    btnReset.style.display = "block";
     
     btnReset.addEventListener("click", () => {
       window.location.reload(true);
+    });
+  },
+
+  data: function(theme) {
+    fetch("./themes.json")
+    .then(response => {
+      return response.json();
+    })
+    .then(jsondata => {
+      //console.log(jsondata.themes[theme])
+      this.words = jsondata.themes[theme];
+      this.start();
     });
   },
   
   theme: function() {
     for(let i = 0; i < inputTheme.length; i++) {
       let check = inputTheme[i].checked;
-      let name = inputTheme[i].value;
+      let theme = inputTheme[i].value;
+
       if (check === true) {
-        if (name == "fruits") {
-          this.words.push("KIWI","AÇAÍ","BANANA","LARANJA","GOIABA","UVA","ABACATE","GUARANÁ","ABACAXI","MORANGO","MELANCIA","CEREJA","FRAMBOESA","LIMA","TANGERINA","COCO","AMEIXA","ACEROLA","AMORA","AZEITONA","CACAU","GRAVIOLA","JACA","MANGA","MURICI","PINHA","PITANGA","PISTACHE","QUINA","SERIGUELA","TOMATE","TORANJA","UMBU","DAMASCO","FIGO","POMELO","CAJU","CIRIGUELA","CRANBERRY");
-          this.start();
-        } else if (name == "food") {
-          this.words.push("QUEIJO","CARNE","OVO","BACON","PIZZA","LASANHA","ESTROGONOFE","SARDINHA","COXINHA","PASTEL","EMPADA","FRANGO","FEIJOADA","CUSCUZ","CHOCOLATE","ARROZ","PANQUECA","SORVETE","LEITE","PRESUNTO","QUIBE");
-          this.start();
-        } else if(name === "aleatorio") {
-          this.words.push("PREFEITO","MURAL","PACIFICA","ARMAS","INÍCIO","GUARDA-CHUVA","TERMOSTATO","GUARDA-ROUPA","JARRO","BINGO","ESTRELA CADENTE","REGRAS","TRANSPORTE","RODA-GIGANTE","AMANHECER","EMPRESA","EMPREGO","TRABALHO","VIDA","RÁDIO","MINHA","ANO-LUZ","COUVE-FLOR","SINAL","ASTRONOMIA","ASTRONAUTA","ANCHOVA","MONTANHA-RUSSA");
-          this.start();
-        } else if (name === "animals") {
-          this.words.push("GALINHA","GATO","PACA","ELEFANTE","PORCO","RATO","BEIJA-FLOR","URSO","GOLFINHO","CABRA","ZEBRA","GIRAFA","CAVALO","CORUJA","PELICANO","PANTERA","PINGUIM","RINOCERONTE","OVELHA","ESQUILO","CAMELO","LHAMA","PEIXE","MACACO","GORILA","MORCEGO","TATU","TARTARUGA","JABUTI","AVESTRUZ","COELHO","TIGRE","TUCANO","CANGURU","SAPO","URUBU","BALEIA","ALCE");
-          this.start();
-        }
+        this.data(theme)
       }
     }
   }
