@@ -13,18 +13,6 @@ const winning_text = document.getElementById("w");
 const score_x = document.getElementById("score_x");
 const score_o = document.getElementById("score_o");
 
-(function() {
-  const config = {
-    apiKey: "AIzaSyA3VHtSjI8ueF8ph3QTI0FT_YCFZ5GMU6o",
-    authDomain: "inspired-skill-159220.firebaseapp.com",
-    databaseURL: "https://inspired-skill-159220.firebaseio.com",
-    projectId: "inspired-skill-159220",
-    storageBucket: "inspired-skill-159220.appspot.com",
-    messagingSenderId: "544070490320"
-  };
-  firebase.initializeApp(config);
-})();
-
 const tic_tac_toe = {
   board: ['', '', '', '', '', '', '', '', ''],
   symbols: {
