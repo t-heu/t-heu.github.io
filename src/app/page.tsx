@@ -18,7 +18,7 @@ export default function Home() {
   const [posts, setPosts] = useState([] as any);
 
   useEffect(() => {
-    const apiUrl = 'https://gist.githubusercontent.com/t-heu/1d5a9f9d2279eff23d4ac03403808964/raw/59d284e2d308a7b6543239d0148eef027b22836c/gistfile1.json'
+    const apiUrl = 'https://gist.githubusercontent.com/t-heu/1d5a9f9d2279eff23d4ac03403808964/raw/5feb649966c18d6c089a15bd0c5a4cf63f9fc5cf/gistfile1.json'
     axios.get(apiUrl)
       .then(response => {
         //console.log(response.data);
