@@ -18,11 +18,50 @@ export default function Home() {
   const [posts, setPosts] = useState([] as any);
 
   useEffect(() => {
-    const apiUrl = 'https://gist.githubusercontent.com/t-heu/1d5a9f9d2279eff23d4ac03403808964/raw/5feb649966c18d6c089a15bd0c5a4cf63f9fc5cf/gistfile1.json'
+    const arr: any = [];
+    const url_initial = 'https://raw.githubusercontent.com/t-heu/';
+    const url_end = '/main/docs/preview.png';
+    const apiUrl = 'https://api.github.com/users/t-heu/repos'
     axios.get(apiUrl)
       .then(response => {
-        //console.log(response.data);
-        setPosts(response.data.data);
+        response.data.map((dataArray: any) => {
+          if (dataArray.topics.includes('theu')) {
+            arr.push({
+              id: dataArray.id,
+              nameProject: dataArray.name,
+              linkImage: url_initial + dataArray.name + url_end,
+              describe: dataArray.description,
+              url: dataArray.homepage ? dataArray.homepage : dataArray.svn_url
+            });   
+          }
+        });
+
+        arr.push({
+          id: 4,
+          nameProject: "IMC",
+          linkImage: "./imc.png",
+          describe: "Calculate IMC",
+          url: "https://t-heu.github.io/statics/imc/"
+        }, {
+          id: 5,
+          nameProject: "Forca HTML",
+          linkImage: "./forca.png",
+          describe: "Game forca",
+          url: "https://t-heu.github.io/statics/forca/"
+        }, {
+          id: 6,
+          nameProject: "Tic Tac Toe",
+          linkImage: "./tictactoe.png",
+          describe: "Game Tic Tac Toe",
+          url: "https://t-heu.github.io/statics/tictactoe/"
+        }, {
+          id: 9,
+          nameProject: "Memodates",
+          linkImage: "https://raw.githubusercontent.com/t-heu/memodates/master/docs/preview.gif",
+          describe: "🎉 memorize the most important dates of your life. (DISCONTINUED)",
+          url: "https://github.com/t-heu/memodates"
+        });
+        setPosts(arr);
       })
       .catch(error => {
         console.error('Erro ao obter os dados:', error);
