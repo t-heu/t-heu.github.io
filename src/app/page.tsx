@@ -17,6 +17,20 @@ interface Idata {
 export default function Home() {
   const [posts, setPosts] = useState([] as any);
 
+  function useDarkMode() {
+    if (typeof window !== "undefined") {
+      // Client-side-only code
+      const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDarkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  }
+
+  useDarkMode();
+
   useEffect(() => {
     const arr: any = [];
     const url_initial = 'https://raw.githubusercontent.com/t-heu/';
@@ -118,7 +132,7 @@ export default function Home() {
                         aspectRatio: "400/200",
                         objectFit: "cover",
                       }}
-                      width="500"
+                      width="auto"
                     />
                     <div className="flex flex-col gap-1">
                       <h3 className="text-xl font-semibold">{data.nameProject}</h3>
