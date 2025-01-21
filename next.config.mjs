@@ -6,6 +6,9 @@ const nextConfig = {
   // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
   // skipTrailingSlashRedirect: true,
   basePath: process.env.NODE_ENV === "development" ? '' : '/.',
+  images: {
+    unoptimized: true, // Disable image optimization
+  },
   //images: {
     //domains: ['media.licdn.com', 'raw.githubusercontent.com'],
   //},

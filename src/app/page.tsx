@@ -1,7 +1,6 @@
 "use client";
-// @ts-ignore next/no-img-element: off
 import Link from "next/link"
-//import Image from "next/image"
+import Image from "next/image"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import axios from 'axios';
 import {useEffect, useState} from 'react';
@@ -16,29 +15,45 @@ interface Idata {
 
 export default function Home() {
   const [posts, setPosts] = useState([] as any);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  function useDarkMode() {
+  // Função para verificar o modo escuro preferido automaticamente
+  const detectDarkMode = () => {
     if (typeof window !== "undefined") {
-      // Client-side-only code
       const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDarkMode) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+      setIsDarkMode(prefersDarkMode);
     }
   }
 
-  useDarkMode();
+  // Função para alternar o modo escuro manualmente
+  const toggleDarkMode = () => {
+    setIsDarkMode(prevMode => !prevMode);
+  }
+
+  // Aplique a classe do tema escuro no HTML
+  useEffect(() => {
+    detectDarkMode();
+  }, []);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
 
   useEffect(() => {
     const arr: any = [];
     const url_initial = 'https://raw.githubusercontent.com/t-heu/';
-    const url_end = '/main/docs/preview.png';
-    const apiUrl = 'https://api.github.com/users/t-heu/repos'
+    const apiUrl = 'https://api.github.com/users/t-heu/repos';
+
     axios.get(apiUrl)
       .then(response => {
         response.data.map((dataArray: any) => {
+          const branch = dataArray.default_branch;
+          const url_end = branch === 'main' ? '/main/docs/preview.png' : '/master/docs/preview.png';
+
           if (dataArray.topics.includes('theu')) {
             arr.push({
               id: dataArray.id,
@@ -84,6 +99,15 @@ export default function Home() {
   
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
+      {/* Botão para alternar o modo escuro */}
+      <div className="flex justify-center mt-4">
+        <button
+          onClick={toggleDarkMode}
+          className="py-2 px-4 rounded-lg bg-gray-200 dark:bg-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-200"
+        >
+          {isDarkMode ? '☼' : '☾'}
+        </button>
+      </div>
       <div className="container grid items-center gap-4 px-4 text-center md:gap-10 lg:gap-16 lg:px-6 xl:grid-cols-3 xl:gap-20">
         <div className="flex flex-col items-center gap-4 xl:order-2 xl:col-start-2 xl:row-start-1">
           <div className="space-y-2">
@@ -91,7 +115,7 @@ export default function Home() {
             <p className="text-gray-500 dark:text-gray-400">Developer Fullstack</p>
           </div>
           <div className="rounded-xl overflow-hidden border">
-            <img
+            <Image
               alt="Photo"
               height="200"
               src='https://media.licdn.com/dms/image/C4E03AQGBBLGk0pmS6g/profile-displayphoto-shrink_200_200/0/1571613202660?e=2147483647&v=beta&t=Jf21CKX3Q9k_o9s1emMuZ_m2pRBqdkt9scc8wJdoyMw'
@@ -122,17 +146,17 @@ export default function Home() {
               {posts.map((data: Idata) => (
                 <Link key={data.id} href={data.url}>
                   <div className="flex flex-col gap-1 py-3">
-                    <img
+                    <Image
                       alt={data.nameProject}
                       className="rounded-lg object-cover"
-                      height="200"
-                      
+                      height={200}
+                      width={300}
+                      layout="responsive"
                       src={data.linkImage}
                       style={{
                         aspectRatio: "400/200",
                         objectFit: "cover",
                       }}
-                      width="auto"
                     />
                     <div className="flex flex-col gap-1">
                       <h3 className="text-xl font-semibold">{data.nameProject}</h3>
