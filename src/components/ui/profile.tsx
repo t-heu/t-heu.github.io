@@ -184,12 +184,12 @@ export default function Profile({posts}: ProfileProps) {
                   {/* Project Image */}
                   <div className="relative overflow-hidden">
                     <Image
-                        src={project.linkImage || "/placeholder.svg"}
-                        alt={project.title}
-                        width={600} // ajuste conforme necessário
-                        height={300}
-                        className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
+                      src={project.linkImage || "/placeholder.svg"}
+                      alt={project.title}
+                      width={600} // ajuste conforme necessário
+                      height={300}
+                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute top-4 right-4">
                       <span
@@ -210,13 +210,13 @@ export default function Profile({posts}: ProfileProps) {
                   </div>
 
                   {/* Project Content */}
-                  <div className="p-6">
+                  <div className="p-6 w-full">
                     <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-semibold group-hover:text-blue-500 transition-colors">
+                      <h3 className="text-base sm:text-xl max-w-full font-semibold group-hover:text-blue-500 transition-colors break-words">
                         {project.title}
                       </h3>
                     </div>
-                    <p className={`text-sm mb-4 ${isDark ? "text-gray-400" : "text-gray-600"}`}>
+                    <p className={`text-sm mb-4 ${isDark ? "text-gray-400" : "text-gray-600"} break-words`}>
                       {project.description}
                     </p>
 
@@ -231,7 +231,7 @@ export default function Profile({posts}: ProfileProps) {
                       </a>
                       <a
                         href={project.url}
-                        className={`flex items-center space-x-1 text-sm transition-colors ${
+                        className={`flex items-center space-x-1 text-sm transition-colors truncate max-w-full ${
                           isDark ? "text-gray-400 hover:text-gray-300" : "text-gray-600 hover:text-gray-700"
                         }`}
                       >
